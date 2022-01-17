@@ -1,2 +1,4 @@
 # Student-Information-System
-Small scale and file based Student Information System based on the logic of relational databases
+**Subject :** Creating a small scale and file based Student Information System based on the logic of relational databases in C
+## Scope of Application
+- 
