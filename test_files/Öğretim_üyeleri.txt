@@ -1,0 +1,6 @@
+1,Ahmet,elbir,dr,
+2,hamza osman,ilhan,dr,
+3,erkan,uslu,dr,
+4,furkan,cakmak,ogr grv,
+5,banu,diri,prof,
+10,kemal,kaya,prof,

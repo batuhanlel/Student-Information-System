@@ -1,0 +1,7 @@
+18011024,Batuhan,LEL,5,20,
+18011078,Batuhan Ahmet,Aydemir,5,20,
+18011101,Sercan,Harputluoglu,5,20,
+18012008,samet,sulun,0,0,
+18011001,ozan,kukul,1,1,
+18011002,ismet,gungor,0,0,
+18011003,ali,gezer,0,0,
