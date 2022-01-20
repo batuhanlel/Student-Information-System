@@ -87,30 +87,30 @@ int main(){
 	int i;	
 	int kredi_limit, ders_sayi_limit;
 		
-	printf("\t\t\tBILGI ISLEM SISTEMINE HOSGELDINIZ!!\n\n");
-	printf("Sistemi Çalistirmadan Önce Sistem Tarafindan Kullanilacak Olan \n'Dersler' 'Ögrenciler' 'Ögretim_üyeleri' ve 'ÖgrenciDersKayit'\nIsimli 'txt' Uzantili Dosyalarin EXE Programiyla Ayni Klasörde\nOldugundan Emin Olunuz");
-	printf("\n\nDosya Konumlarindan Eminseniz Devam Etmek için 1'i Tuslayiniz\nProgrami Sonlandirmak Için 0'i Tuslayiniz\n"); scanf("%d",&i);
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");
+	printf("Before Starting the System Make Sure that the \n'Courses.txt' 'Students.txt' 'Lecturer.txt' and 'StudentCourseEnroll.txt' are \nin the Same Directory as the EXE Program");
+	printf("\n\nIf you are sure of the file locations, press 1 to continue, \npress 0 to terminate the program\n"); scanf("%d",&i);
 	if(!i){
 		system("cls");		
 		return 0;		
 	}
 	system("cls");
-	printf("\t\t\tBILGI ISLEM SISTEMINE HOSGELDINIZ!!\n\n");	
-	printf("\nSistem Ilk Kez Çalistigi Için Kurulumun Tamamlanmasi Gerekmekte !!\n\nKurulum Için Gerekenler :\n");
-	printf("-->Bir Ögrencinin Alabilecegi MAKSIMUM KREDI Sayisi\n-->Bir Ögrencinin Alabilecegi MAKSIMUM DERS  Sayisi\n");
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");	
+	printf("\nConfiguration Must be Done As the System Works for the First Time !!\n\nWhat is Needed :\n");
+	printf("-->MAXIMUM NUMBER of CREDITS a Student can Take\n-->MAXIMUM NUMBER of COURSE a Student can Take\n");
 	
 	
-	printf("\nMAKSIMUM KREDI SAYISINI GIRINIZ : ");
+	printf("\nPlease Enter Maximum Number of Credits : ");
 	scanf("%d", &kredi_limit);
 	getchar();
 	
-	printf("MAKSIMUM DERS  SAYISINI GIRINIZ : ");
+	printf("Please Enter Maximum Number of Course : ");
 	scanf("%d", &ders_sayi_limit);
 	getchar();
 	system("cls");
 	
-	printf("\t\t\tBILGI ISLEM SISTEMINE HOSGELDINIZ!!\n\n");
-	printf("Girmis Oldugunuz Verilere Göre Sistemin Kurulumu Tamamlanmistir!!\nMenüye Gitmek Için Herhangi Bir Tusa Basin : ");
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");
+	printf("According to the Data You Entered, the Configuration of the System has been Completed.!!\nPress Any Key to Go to the Menu : ");
 	getch();
 	system("cls");
 	
@@ -129,8 +129,8 @@ void Ana_menu(int kredi_limit, int ders_limit){
 	
 	j=1;
 	while(j){
-		printf("\n\t\t\t\tANA MENÜ");
-		printf("\n1)DERS ISLEMLERI\n -->Ders Ekleme\n -->Ders Silme\n -->Ders Güncelleme\n -->Dersleri Görüntüleme");
+		printf("\n\t\t\t\tMAIN MENU");
+		printf("\n1)COURSE OPERATIONS\n -->Ders Ekleme\n -->Ders Silme\n -->Ders Güncelleme\n -->Dersleri Görüntüleme");
 		printf("\n2)ÖGRENCI ISLEMLERI\n -->Ders Kayit\n -->Ders Birakma\n -->Ögrenci Ekleme\n -->Ögrenci Silme\n -->Ögrenci Güncelleme\n -->Tüm Ögrencileri Görüntüleme");
 		printf("\n3)ÖGRETIM ÜYESI ISLEMLERI\n -->Ögretim Üyesi Ekleme\n -->Ögretim Üyesi Silme\n -->Ögretim Üyesi Güncelleme\n -->Tüm Ögretim Üyelerini Görüntüleme");
 		printf("\n4)LISTELEME ISLEMLERI\n -->Ögretim Üyesi Verdigi Dersleri Listeleme\n -->Derse Kayitli Ögrencileri Listeleme\n -->Ögrencinin Aldigi Dersleri Listeleme\n -->Ögretim Üyesinin Verdigi Derslerin Sinif Listelerini Olusturma");
