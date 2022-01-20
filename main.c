@@ -81,36 +81,36 @@ void Listeleme_menu();
 
 int main(){
 
-	system("title USİS V.12.09010.1.2");
+	system("title USIS V.12.09010.1.2");
 	setlocale(LC_ALL, "Turkish");
 
 	int i;	
 	int kredi_limit, ders_sayi_limit;
 		
-	printf("\t\t\tBİLGİ İŞLEM SİSTEMİNE HOŞGELDİNİZ!!\n\n");
-	printf("Sistemi Çalıştırmadan Önce Sistem Tarafından Kullanılacak Olan \n'Dersler' 'Öğrenciler' 'Öğretim_üyeleri' ve 'ÖğrenciDersKayıt'\nİsimli 'txt' Uzantılı Dosyaların EXE Programıyla Aynı Klasörde\nOlduğundan Emin Olunuz");
-	printf("\n\nDosya Konumlarından Eminseniz Devam Etmek için 1'i Tuşlayınız\nProgramı Sonlandırmak İçin 0'ı Tuşlayınız\n"); scanf("%d",&i);
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");
+	printf("Before Starting the System Make Sure that the \n'Courses.txt' 'Students.txt' 'Lecturer.txt' and 'StudentCourseEnroll.txt' are \nin the Same Directory as the EXE Program");
+	printf("\n\nIf you are sure of the file locations, press 1 to continue, \npress 0 to terminate the program\n"); scanf("%d",&i);
 	if(!i){
 		system("cls");		
 		return 0;		
 	}
 	system("cls");
-	printf("\t\t\tBİLGİ İŞLEM SİSTEMİNE HOŞGELDİNİZ!!\n\n");	
-	printf("\nSistem İlk Kez Çalıştığı İçin Kurulumun Tamamlanması Gerekmekte !!\n\nKurulum İçin Gerekenler :\n");
-	printf("-->Bir Öğrencinin Alabileceği MAKSİMUM KREDİ Sayısı\n-->Bir Öğrencinin Alabileceği MAKSİMUM DERS  Sayısı\n");
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");	
+	printf("\nConfiguration Must be Done As the System Works for the First Time !!\n\nWhat is Needed :\n");
+	printf("-->MAXIMUM NUMBER of CREDITS a Student can Take\n-->MAXIMUM NUMBER of COURSE a Student can Take\n");
 	
 	
-	printf("\nMAKSİMUM KREDİ SAYISINI GİRİNİZ : ");
+	printf("\nPlease Enter Maximum Number of Credits : ");
 	scanf("%d", &kredi_limit);
 	getchar();
 	
-	printf("MAKSİMUM DERS  SAYISINI GİRİNİZ : ");
+	printf("Please Enter Maximum Number of Course : ");
 	scanf("%d", &ders_sayi_limit);
 	getchar();
 	system("cls");
 	
-	printf("\t\t\tBİLGİ İŞLEM SİSTEMİNE HOŞGELDİNİZ!!\n\n");
-	printf("Girmiş Olduğunuz Verilere Göre Sistemin Kurulumu Tamamlanmıştır!!\nMenüye Gitmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\t\t\tWELCOME TO STUDENT INFORMATION SYSTEM!!\n\n");
+	printf("According to the Data You Entered, the Configuration of the System has been Completed.!!\nPress Any Key to Go to the Menu : ");
 	getch();
 	system("cls");
 	
@@ -129,12 +129,12 @@ void Ana_menu(int kredi_limit, int ders_limit){
 	
 	j=1;
 	while(j){
-		printf("\n\t\t\t\tANA MENÜ");
-		printf("\n1)DERS İŞLEMLERİ\n -->Ders Ekleme\n -->Ders Silme\n -->Ders Güncelleme\n -->Dersleri Görüntüleme");
-		printf("\n2)ÖĞRENCİ İŞLEMLERİ\n -->Ders Kayıt\n -->Ders Bırakma\n -->Öğrenci Ekleme\n -->Öğrenci Silme\n -->Öğrenci Güncelleme\n -->Tüm Öğrencileri Görüntüleme");
-		printf("\n3)ÖĞRETİM ÜYESİ İŞLEMLERİ\n -->Öğretim Üyesi Ekleme\n -->Öğretim Üyesi Silme\n -->Öğretim Üyesi Güncelleme\n -->Tüm Öğretim Üyelerini Görüntüleme");
-		printf("\n4)LİSTELEME İŞLEMLERİ\n -->Öğretim Üyesi Verdiği Dersleri Listeleme\n -->Derse Kayıtlı Öğrencileri Listeleme\n -->Öğrencinin Aldığı Dersleri Listeleme\n -->Öğretim Üyesinin Verdiği Derslerin Sınıf Listelerini Oluşturma");
-		printf("\nDEVAM ETMEK İSTEDİĞİNİZ ÜST BAŞLIĞIN NUMARASINI GİRİNİZ\nPROGRAMI SONLANDIRMAK İÇİN 0 GİRİNİZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\t\t\tMAIN MENU");
+		printf("\n1)COURSE OPERATIONS\n -->Adding Course\n -->Deleting Course\n -->Updating Course\n -->Listing Courses");
+		printf("\n2)STUDENT OPERATIONS\n -->Course Enrollment\n -->Course Dropping\n -->Adding Student\n -->Deleting Student\n -->Updating Student\n -->Listing All Students");
+		printf("\n3)LECTURER OPERATIONS\n -->Adding Lecturer\n -->Deleting Lecturer\n -->Updating Lecturer\n -->Listing All Lecturers");
+		printf("\n4)LISTING OPERATIONS\n -->Listing the Courses Given by the Lecturer\n -->Listing Students Enrolled in a Course\n -->Listing the Courses Taken by a Student\n -->Creating Class Lists of Courses Taught by the Lecturer");
+		printf("\nENTER THE NUMBER OF THE TOP HEADING YOU WISH TO CONTINUE\nENTER 0 TO TERMINATE THE PROGRAM\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ders_menu();
@@ -161,9 +161,9 @@ void Ders_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tDERS İŞLEMLERİ");
-		printf("\n1)Ders Ekleme\n2)Ders Güncelleme\n3)Dersleri Görüntüleme\n4)Ders Silme");
-		printf("\n\nDEVAM ETMEK İÇİN İSTEDİĞİNİZ İŞLEMİN NUMARASINI GİRİNİZ\nÜST MENÜYE DÖNMEK İÇİN 0 GİRİNİZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tCOURSE OPERATIONS");
+		printf("\n1)Adding Course\n2)Updating Course\n3)Listing Courses\n4)Deleting Course");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ders_Ekleme();	
@@ -191,9 +191,9 @@ void Ogrenci_menu(int kredi, int ders){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tÖĞRENCİ İŞLEMLERİ");
-		printf("\n1)Ders Kayıt\n2)Ders Bırakma\n3)Öğrenci Ekleme\n4)Öğrenci Silme\n5)Öğrenci Güncelleme\n6)Tüm Öğrencileri Görüntüleme");
-		printf("\n\nDEVAM ETMEK İÇİN İSTEDİĞİNİZ İŞLEMİN NUMARASINI GİRİNİZ\nÜST MENÜYE DÖNMEK İÇİN 0 GİRİNİZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tSTUDENT OPERATIONS");
+		printf("\n1)Course Enrollment\n2)Course Dropping\n3)Adding Student\n4)Deleting Student\n5)Updating Student\n6)Listing All Students");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Derse_Kayit(kredi,ders);	
@@ -229,9 +229,9 @@ void Ogretmen_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tÖĞRETİM ÜYESİ İŞLEMLERİ");
-		printf("\n1)Öğretim Üyesi Ekleme\n2)Öğretim Üyesi Silme\n3)Öğretim Üyesi Güncelleme\n4)Tüm Öğretim Üyelerini Görüntüleme");
-		printf("\n\nDEVAM ETMEK İÇİN İSTEDİĞİNİZ İŞLEMİN NUMARASINI GİRİNİZ\nÜST MENÜYE DÖNMEK İÇİN 0 GİRİNİZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tLECTURER OPERATIONS");
+		printf("\n1)Adding Lecturer\n2)Deleting Lecturer\n3)Updating Lecturer\n4)Listing All Lecturers");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ogretmen_Ekleme();	
@@ -260,9 +260,9 @@ void Listeleme_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tLİSTELEME İŞLEMLERİ");
-		printf("\n1)Öğretim Üyesi Verdiği Dersleri Listeleme\n2)Derse Kayıtlı Öğrencileri Listeleme\n3)Öğrencinin Aldığı TÜM Dersleri Listeleme\n4)Öğretim Üyesinin Verdiği Derslerin Sınıf Listelerini Oluşturma");
-		printf("\n\nDEVAM ETMEK İÇİN İSTEDİĞİNİZ İŞLEMİN NUMARASINI GİRİNİZ\nÜST MENÜYE DÖNMEK İÇİN 0 GİRİNİZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tLISTING OPERATIONS");
+		printf("\n1)Listing the Courses Given by the Lecturer\n2)Listing Students Enrolled in a Course\n3)Listing the Courses Taken by a Student\n4)Creating Class Lists of Courses Taught by the Lecturer");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ogretmenin_Verdigi_Dersler_Print();	
@@ -291,12 +291,12 @@ void Listeleme_menu(){
 void Ders_Kayit_Sil(){
 	
 	char ogrenci_id[15];
-	printf("Kaydını Silmek İstediğiniz Öğrenci Numarasını Giriniz : ");
+	printf("Kaydini Silmek Istediginiz Ögrenci Numarasini Giriniz : ");
 	scanf("%s", ogrenci_id);
 	getchar();
 
 	char ders_kod[15];
-	printf("\nKaydını Silmek İstediğiniz Ders Kodunu Giriniz : ");
+	printf("\nKaydini Silmek Istediginiz Ders Kodunu Giriniz : ");
 	scanf("%s", ders_kod);
 	getchar();
 	
@@ -314,11 +314,11 @@ void Ders_Kayit_Sil(){
 	char line3[100];
 	char* jeton3; char* parsed_dersler[10];
 	
-	fp_kayit = fopen("ÖğrenciDersKayıt.txt", "r");
+	fp_kayit = fopen("StudentCourseEnroll.txt", "r");
 	
 	if(fp_kayit == NULL){
 		
-		perror("ÖğrenciDersKayıt dosyası açılamadı: ");
+		perror("ÖgrenciDersKayit dosyasi açilamadi: ");
 		return;
 	}
 	
@@ -326,7 +326,7 @@ void Ders_Kayit_Sil(){
 						
 	if(fp_kayit_kopya == NULL){
 							
-		perror("replica.txt açılamadı: ");
+		perror("replica.txt açilamadi: ");
 		fclose(fp_kayit);
 		return;
 	}	
@@ -351,7 +351,7 @@ void Ders_Kayit_Sil(){
 	
 	if(counter == 0){
 
-		printf("\nGirdiğiniz Öğrenci Numarası ve Ders Kodu İle Eşleşen Bir Veri Bulunamadı!!!\nÜst Menüye Yönlendiriliyorsunuz!!\nHerhangi Bir Tuşa Basın : ");
+		printf("\nGirdiginiz Ögrenci Numarasi ve Ders Kodu Ile Eslesen Bir Veri Bulunamadi!!!\nÜst Menüye Yönlendiriliyorsunuz!!\nHerhangi Bir Tusa Basin : ");
 		fclose(fp_kayit);
 		fclose(fp_kayit_kopya);	
 		getch();
@@ -377,11 +377,11 @@ void Ders_Kayit_Sil(){
 		
 			fprintf(fp_kayit_kopya,"%s,%s,%s,0,%s,\n", parsed_derskayit[0], parsed_derskayit[1], parsed_derskayit[2],  parsed_derskayit[4]);				
 		
-			fp_dersler = fopen("Dersler.txt","r");
+			fp_dersler = fopen("Courses.txt","r");
 			
 			if(fp_dersler == NULL){
 			
-				perror("Dersler.txt dosyasi açılamadı : ");
+				perror("Courses.txt dosyasi açilamadi : ");
 				fclose(fp_kayit_kopya);
 				fclose(fp_kayit);
 				return;
@@ -404,11 +404,11 @@ void Ders_Kayit_Sil(){
 				}
 			}
 		
-			fp_ogrenciler = fopen("Öğrenciler.txt","r");
+			fp_ogrenciler = fopen("Students.txt","r");
 			
 			if(fp_ogrenciler == NULL){
 			
-				perror("Öğrenciler.txt dosyasi açılamadı : ");
+				perror("Students.txt dosyasi açilamadi : ");
 				fclose(fp_kayit_kopya);
 				fclose(fp_kayit);
 				fclose(fp_dersler);
@@ -419,7 +419,7 @@ void Ders_Kayit_Sil(){
 			
 			if(fp_ogrenci_kopya == NULL){
 				
-				perror("replica2.txt dosyasi açılamadı: ");
+				perror("replica2.txt dosyasi açilamadi: ");
 				fclose(fp_kayit_kopya);
 				fclose(fp_kayit);
 				fclose(fp_dersler);
@@ -477,31 +477,31 @@ void Ders_Kayit_Sil(){
 	fclose(fp_ogrenciler);	
 	
 	int ret;
-	ret =  remove("ÖğrenciDersKayıt.txt");
+	ret =  remove("StudentCourseEnroll.txt");
 	
 	if(ret != 0) {
     	perror("\nError: unable to delete the file");
 	} 
 	
 	int ret2;
-	ret2 = rename("replica.txt", "ÖğrenciDersKayıt.txt");
+	ret2 = rename("replica.txt", "StudentCourseEnroll.txt");
 	
 	if(ret2 != 0) {
     	perror("\nError: unable to rename the file");
 	} 		
 	
-	ret =  remove("Öğrenciler.txt");
+	ret =  remove("Students.txt");
 	
 	if(ret != 0) {
     	perror("\nError: unable to delete the file");
 	} 
 	
-	ret2 = rename("replica2.txt", "Öğrenciler.txt");
+	ret2 = rename("replica2.txt", "Students.txt");
 	
 	if(ret2 != 0) {
     	perror("\nError: unable to rename the file");
 	} 	
-	printf("Öğrencinin Derse Kayıdı Başarıyla Silindi\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("Ögrencinin Derse Kayidi Basariyla Silindi\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 }
 
@@ -524,17 +524,17 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 	char* jeton3; char* parsed_derskayit[10];
 	
 	char ogrenci_numara[15]; char ders_kodu[15];
-	printf("\nKayıt Olacak Öğrencinin Numarasını Giriniz : ");
+	printf("\nKayit Olacak Ögrencinin Numarasini Giriniz : ");
 	scanf("%s", ogrenci_numara);
 	getchar();
 	
 	FILE *fp_ogrenciler, *fp_dersler, *fp_ogrenciler_kopya, *fp_kayit;
 	
-	fp_ogrenciler = fopen("Öğrenciler.txt","r");
+	fp_ogrenciler = fopen("Students.txt","r");
 	
 	if(fp_ogrenciler == NULL){
 		
-		perror("Öğrenciler dosyası açılamadı: ");
+		perror("Ögrenciler dosyasi açilamadi: ");
 		return;
 	}
 	
@@ -543,7 +543,7 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 						
 	if(fp_ogrenciler_kopya == NULL){
 							
-		perror("replica.txt açılamadı: ");
+		perror("replica.txt açilamadi: ");
 		fclose(fp_ogrenciler);
 		return;
 	}	
@@ -570,22 +570,22 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 	
 	if(counter == 0){
 		
-		printf("\nGirdiğiniz Öğrenci Numarası Bulunamamıştır\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tuşa Basın");
+		printf("\nGirdiginiz Ögrenci Numarasi Bulunamamistir\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tusa Basin");
 		fclose(fp_ogrenciler);
 		fclose(fp_ogrenciler_kopya);
 		getch();
 		return;
 	}
 	
-	printf("\nKayıt Olmak İstediğiniz Dersin Kodunu Giriniz : ");
+	printf("\nKayit Olmak Istediginiz Dersin Kodunu Giriniz : ");
 	scanf("%s", ders_kodu);
 	getchar();
 			
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 			
 	if(fp_dersler == NULL){
 				
-		perror("Dersler.txt açılamadı: ");
+		perror("Courses.txt açilamadi: ");
 		fclose(fp_ogrenciler);
 		fclose(fp_ogrenciler_kopya);		
 		return;
@@ -611,7 +611,7 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 	
 	if(counter2 == 0){
 		
-		printf("\nGirdiğiniz Ders Kodu Bulunamamıştır\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tuşa Basın");
+		printf("\nGirdiginiz Ders Kodu Bulunamamistir\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tusa Basin");
 		fclose(fp_ogrenciler);
 		fclose(fp_dersler);
 		fclose(fp_ogrenciler_kopya);
@@ -619,11 +619,11 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 		return;
 	}
 	
-	fp_kayit = fopen("ÖğrenciDersKayıt.txt", "r");
+	fp_kayit = fopen("StudentCourseEnroll.txt", "r");
 	
 	if(fp_kayit == NULL){
 		
-		perror("\nÖğrenciDersKayıt.txt açılamadı: ");
+		perror("\nStudentCourseEnroll.txt açilamadi: ");
 		return;
 	}
 	
@@ -650,7 +650,7 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 	
 	if(counter3 == 1){
 		
-		printf("\nNumarası Girilen Öğrenci Bu Derse Kayıtlı Durumda!!!\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tuşa Basın");
+		printf("\nNumarasi Girilen Ögrenci Bu Derse Kayitli Durumda!!!\nÜst Menüye Yönlendiriliyorsunuz\nHerhangi Bir Tusa Basin");
 		fclose(fp_ogrenciler);
 		fclose(fp_dersler);
 		fclose(fp_ogrenciler_kopya);
@@ -705,11 +705,11 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 											
 						fprintf(fp_ogrenciler_kopya, "%s,%s,%s,%s,%s,\n", parsed_ogrenciler[0], parsed_ogrenciler[1], parsed_ogrenciler[2], parsed_ogrenciler[3], parsed_ogrenciler[4]);
 						
-						fp_kayit = fopen("ÖğrenciDersKayıt.txt","a");
+						fp_kayit = fopen("StudentCourseEnroll.txt","a");
 						
 						if(fp_kayit == NULL){
 							
-							perror("ÖğrenciDersKayıt.txt dosyası açılamadı :");
+							perror("StudentCourseEnroll.txt dosyasi açilamadi :");
 							return;
 						}
 												
@@ -729,13 +729,13 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 					}
 					else if(((ders_kredi + ogrenci_mevcut_kredi) > kredi_limit)){
 						
-						printf("Kredi limitini aştınız.");
+						printf("Kredi limitini astiniz.");
 						fprintf(fp_ogrenciler_kopya, "%s,%s,%s,%s,%s,\n", parsed_ogrenciler[0], parsed_ogrenciler[1], parsed_ogrenciler[2], parsed_ogrenciler[3], parsed_ogrenciler[4]);
 						return;
 					}
 					else{
 						
-						printf("Ders sayisi limitini aştınız.");
+						printf("Ders sayisi limitini astiniz.");
 						fprintf(fp_ogrenciler_kopya, "%s,%s,%s,%s,%s,\n", parsed_ogrenciler[0], parsed_ogrenciler[1], parsed_ogrenciler[2], parsed_ogrenciler[3], parsed_ogrenciler[4]);
 						return;
 					}
@@ -754,19 +754,19 @@ void Derse_Kayit(int kredi_limit, int ders_sayi_limit){
 	fclose(fp_kayit);
 	
 	int kontrol;
-	kontrol =  remove("Öğrenciler.txt");
+	kontrol =  remove("Students.txt");
 	
 	if(kontrol) {
     	perror("\nError: unable to delete the file");
 	} 
 	
 	
-	kontrol = rename("replica.txt", "Öğrenciler.txt");
+	kontrol = rename("replica.txt", "Students.txt");
 	
 	if(kontrol) {
     	perror("\nError: unable to rename the file");
 	} 		
-	printf("\nÖğrenci Derse Başarılı Bir Şekilde Kayıt Oldu!!!\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\nÖgrenci Derse Basarili Bir Sekilde Kayit Oldu!!!\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 }
 
@@ -811,7 +811,7 @@ void Ogretmen_Verdigi_Dersler_SinifListeleri_TXT(){
 	ogretmen_id = (char*) malloc(sizeof(char)*20);
 	ders_adi    = (char*) malloc(sizeof(char)*20);
 		
-	printf("Öğretim Görevlisi ID'sini Giriniz : ");
+	printf("Ögretim Görevlisi ID'sini Giriniz : ");
 	scanf("%s", ogretmen_id);
 	
 	FILE *fp_dersler, *fp_sinif_listesi, * fp_derskayit, * fp_ogrenciler;
@@ -826,11 +826,11 @@ void Ogretmen_Verdigi_Dersler_SinifListeleri_TXT(){
 	line3 = (char*) malloc(sizeof(char)*100);
 
 
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	
 	if(fp_dersler == NULL){
 		
-		perror("dersler dosyası açılamadı: ");
+		perror("dersler dosyasi açilamadi: ");
 		return;
 	}
 	
@@ -848,11 +848,11 @@ void Ogretmen_Verdigi_Dersler_SinifListeleri_TXT(){
 			fp_sinif_listesi = fopen(ders_adi, "w");
 			
 			
-			fp_derskayit = fopen("ÖğrenciDersKayıt.txt", "r");
+			fp_derskayit = fopen("StudentCourseEnroll.txt", "r");
 			
 			if(fp_derskayit == NULL){
 				
-				perror("ÖğrenciDersKayıt açılamadı : ");
+				perror("ÖgrenciDersKayit açilamadi : ");
 				return;
 			}
 			
@@ -862,7 +862,7 @@ void Ogretmen_Verdigi_Dersler_SinifListeleri_TXT(){
 				
 				if(strcmp(ders_kayit->ders_kodu, ders->kod) == 0 && strcmp(ders_kayit->durum, "1") == 0){
 					
-					fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+					fp_ogrenciler = fopen("Students.txt", "r");
 					
 					if(fp_ogrenciler == NULL){
 						
@@ -896,9 +896,9 @@ void Ogretmen_Verdigi_Dersler_SinifListeleri_TXT(){
 	free(ders_adi);
 	free(ogretmen_id);
 	
-	printf("DERSKODU_SINIFLİSTESİ Dosyaları EXE Programının Bulunduğu Dosya Konumunda Oluştu.\n");
-	printf("Herhangi Bir Çıktı Almadıysanız Öğretim Üyesinin ID'sini Kontrol Edip Tekrar Deneyiniz veya Bu Öğretim Üyesi Herhangi Bir Ders Vermemekte!!\n");
-	printf("Üst Menüye Dönmek İçin Herhangi Bir Tuşa Basınız : ");
+	printf("DERSKODU_SINIFLISTESI Dosyalari EXE Programinin Bulundugu Dosya Konumunda Olustu.\n");
+	printf("Herhangi Bir Çikti Almadiysaniz Ögretim Üyesinin ID'sini Kontrol Edip Tekrar Deneyiniz veya Bu Ögretim Üyesi Herhangi Bir Ders Vermemekte!!\n");
+	printf("Üst Menüye Dönmek Için Herhangi Bir Tusa Basiniz : ");
 	getch();
 }
 
@@ -928,17 +928,17 @@ void Ogrencinin_Aldigi_Tum_Dersler_Print(){
 	line2 = (char*) malloc(sizeof(char)*100);
 	
 
-	printf("Öğrencinin Numarasını Giriniz : ");
+	printf("Ögrencinin Numarasini Giriniz : ");
 	scanf("%s", ogrenci_numara);
 	getchar();
 	
 	FILE *fp_ders_kayit, *fp_dersler;
 	
-	fp_ders_kayit = fopen("ÖğrenciDersKayıt.txt", "r");
+	fp_ders_kayit = fopen("StudentCourseEnroll.txt", "r");
 	
 	if(fp_ders_kayit == NULL){
 		
-		perror("ÖğrenciDersKayıt dosyası açılamadı : ");
+		perror("ÖgrenciDersKayit dosyasi açilamadi : ");
 		return;
 	}
 	
@@ -951,7 +951,7 @@ void Ogrencinin_Aldigi_Tum_Dersler_Print(){
 				
 		if(strcmp(ders_kayit->ogrenci_numara, ogrenci_numara) == 0 && strcmp(ders_kayit->durum, "1") == 0){
 			
-			fp_dersler = fopen("Dersler.txt", "r");
+			fp_dersler = fopen("Courses.txt", "r");
 			
 			if(fp_dersler == NULL){
 				
@@ -977,7 +977,7 @@ void Ogrencinin_Aldigi_Tum_Dersler_Print(){
 	free(line);
 	free(line2);
 	free(ogrenci_numara);
-	printf("Herhangi Bir Çıktı Almadıysanız Öğrenci Numarasını Kontrol Edip Tekrar Giriniz veya Bu Öğrenci Herhangi Bir Ders Almamakta\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");  getch();		
+	printf("Herhangi Bir Çikti Almadiysaniz Ögrenci Numarasini Kontrol Edip Tekrar Giriniz veya Bu Ögrenci Herhangi Bir Ders Almamakta\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");  getch();		
 	
 }
 
@@ -1008,11 +1008,11 @@ void Derse_Kayitli_Tum_Ogrenciler_Print(){
 	
 	FILE *fp_ders_kayit, *fp_ogrenciler;
 	
-	fp_ders_kayit = fopen("ÖğrenciDersKayıt.txt", "r");
+	fp_ders_kayit = fopen("StudentCourseEnroll.txt", "r");
 	
 	if(fp_ders_kayit == NULL){
 		
-		perror("ÖğrenciDersKayıt dosyası açılamadı : ");
+		perror("ÖgrenciDersKayit dosyasi açilamadi : ");
 		return;
 	}
 	
@@ -1030,7 +1030,7 @@ void Derse_Kayitli_Tum_Ogrenciler_Print(){
 	
 		if(strcmp(ders_kayit->ders_kodu, ders_kodu) == 0 && strcmp(ders_kayit->durum, "1") == 0 ){
 			
-			fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+			fp_ogrenciler = fopen("Students.txt", "r");
 			
 			if(fp_ogrenciler == NULL){
 				
@@ -1057,7 +1057,7 @@ void Derse_Kayitli_Tum_Ogrenciler_Print(){
 	free(line);
 	free(line2);
 	free(ders_kodu);
-	printf("Herhangi Bir Çıktı Almadıysanız Ders Kodunu Kontrol Edip Tekrar Giriniz veya Bu Dersi Herhangi Bir Öğrenci Almamakta\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");  getch();
+	printf("Herhangi Bir Çikti Almadiysaniz Ders Kodunu Kontrol Edip Tekrar Giriniz veya Bu Dersi Herhangi Bir Ögrenci Almamakta\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");  getch();
 
 }
 
@@ -1073,17 +1073,17 @@ void Ogretmenin_Verdigi_Dersler_Print(){
 	char *ogretmen_id;
 	ogretmen_id = (char*) malloc(sizeof(char)*10);
 	
-	printf("Öğretim Üyesinin ID'sini Giriniz : ");
+	printf("Ögretim Üyesinin ID'sini Giriniz : ");
 	scanf("%s", ogretmen_id);
 	getchar();
 	
 	FILE *fp_dersler;
 	
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	
 	if(fp_dersler == NULL){
 		
-		perror("Dersler.txt açılamadı : ");
+		perror("Courses.txt açilamadi : ");
 		return;
 	}
 				
@@ -1104,7 +1104,7 @@ void Ogretmenin_Verdigi_Dersler_Print(){
 	fclose(fp_dersler);
 	free(ders);
 	free(line);	
-	printf("Herhangi Bir Çıktı Almadıysanız Öğretim Üyesinin ID'sini Kontrol Edip Tekrar Giriniz veya Bu Öğretim Üyesi Ders Vermemekte\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");  getch();
+	printf("Herhangi Bir Çikti Almadiysaniz Ögretim Üyesinin ID'sini Kontrol Edip Tekrar Giriniz veya Bu Ögretim Üyesi Ders Vermemekte\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");  getch();
 }
 
 
@@ -1123,7 +1123,7 @@ void Ogrenci_Ekleme(){
 	
 	FILE *fp_ogrenciler;
 		
-	fp_ogrenciler = fopen("Öğrenciler.txt", "a");
+	fp_ogrenciler = fopen("Students.txt", "a");
 	if(fp_ogrenciler == NULL){
 		
 		perror("Error opening file");
@@ -1133,8 +1133,8 @@ void Ogrenci_Ekleme(){
 	
 				
 	int j, counter = 1, secim;
-	printf("\nGİRECEĞİNİZ ÖĞRENCİ BİLGİLERİNİN FORMATI AŞAĞIDAKİ GİBİ OLMALIDIR!!\nYENİ BİR ÖĞRENCİ EKLEDİĞİNİZ İÇİN KREDİ VE DERS SAYISINI  0  OLARAK GİRİNİZ!!!");
-	printf("\nFormat : öğrenci_numarası,öğrenci_adı,öğrenci_soyadı,öğrencinin_aldığı_ders_sayısı,öğrencinin_aldığı_toplam_kredi,\n");
+	printf("\nGIRECEGINIZ ÖGRENCI BILGILERININ FORMATI ASAGIDAKI GIBI OLMALIDIR!!\nYENI BIR ÖGRENCI EKLEDIGINIZ IÇIN KREDI VE DERS SAYISINI  0  OLARAK GIRINIZ!!!");
+	printf("\nFormat : ögrenci_numarasi,ögrenci_adi,ögrenci_soyadi,ögrencinin_aldigi_ders_sayisi,ögrencinin_aldigi_toplam_kredi,\n");
 	
 	
 	while(counter){
@@ -1144,7 +1144,7 @@ void Ogrenci_Ekleme(){
 
 		if(Ogrenci_ID_Kontrol(ogrenci->id) == 0){
 			
-			printf("Girmiş Olduğunuz Öğrenci Numarası Bulunmaktadır.Tekrar Denemek İçin 1 Üst Menüye Dönmek İçin 0 Giriniz : "); 
+			printf("Girmis Oldugunuz Ögrenci Numarasi Bulunmaktadir.Tekrar Denemek Için 1 Üst Menüye Dönmek Için 0 Giriniz : "); 
 			scanf("%d",&secim);
 			getchar();
 			if(secim==0){
@@ -1162,8 +1162,8 @@ void Ogrenci_Ekleme(){
 	fprintf(fp_ogrenciler,"%s,%s,%s,%s,%s,\n",ogrenci->id, ogrenci->ad, ogrenci->soyad, ogrenci->ders_sayisi, ogrenci->toplam_kredi_sayisi);
 	fclose(fp_ogrenciler);
 	free(ogrenci);
-	printf("\nGirmiş Olduğunuz Öğrenci Başarıyla Eklenmiştir!!");
-	printf("\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\nGirmis Oldugunuz Ögrenci Basariyla Eklenmistir!!");
+	printf("\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();	
 	
 }
@@ -1175,14 +1175,14 @@ void Ogrenci_Guncelleme(){
 	OGRENCILER *ogrenci;
 	ogrenci = (OGRENCILER*) malloc(sizeof(OGRENCILER));
 	if(ogrenci == NULL){
-		perror("Bellek alanı açılamadı : ");
+		perror("Bellek alani açilamadi : ");
 	}
 	
 	FILE *fp_ogrenciler;
-	fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+	fp_ogrenciler = fopen("Students.txt", "r");
 	if(fp_ogrenciler == NULL){
 		
-		perror("Öğrenciler.txt açılamadı : ");
+		perror("Students.txt açilamadi : ");
 		return;
 	}	
 	
@@ -1192,7 +1192,7 @@ void Ogrenci_Guncelleme(){
 	yeni_ad = (char*) malloc(sizeof(char)*100);
 	yeni_soyad = (char*) malloc(sizeof(char)*100);
 	
-	printf("\n İNDEX   | NUMARA | İSİM | SOYİSİM | DERS SAYISI | TOPLAM KREDİ\n");
+	printf("\n INDEX   | NUMARA | ISIM | SOYISIM | DERS SAYISI | TOPLAM KREDI\n");
 	i = 1;
 	while(fgets(line, 100, fp_ogrenciler)){
 		
@@ -1200,7 +1200,7 @@ void Ogrenci_Guncelleme(){
 		printf("%s", line);
 		i++;
 	}
-	printf("\n\nGüncellemek İstediğiniz Öğrencinin İNDEXİNİ Giriniz: ");
+	printf("\n\nGüncellemek Istediginiz Ögrencinin INDEXINI Giriniz: ");
 	scanf("%d", &index);
 	getchar();
 	
@@ -1214,7 +1214,7 @@ void Ogrenci_Guncelleme(){
 		sscanf(line, "%[^,],%[^,],%[^,],%[^,],%[^,]", ogrenci[i].id, ogrenci[i].ad, ogrenci[i].soyad, ogrenci[i].ders_sayisi, ogrenci[i].toplam_kredi_sayisi);
 		
 		if((i+1)==index){
-			printf("\nÖğrencinin YENİ Adını ve Soyadını Giriniz\nÖrnek Format :  isim1 isim2,soyisim,\n\t\t");
+			printf("\nÖgrencinin YENI Adini ve Soyadini Giriniz\nÖrnek Format :  isim1 isim2,soyisim,\n\t\t");
 			scanf("%[^,],%[^,],", yeni_ad, yeni_soyad);
 			getchar();
 			strcpy(ogrenci[i].ad, yeni_ad);
@@ -1226,10 +1226,10 @@ void Ogrenci_Guncelleme(){
 	fclose(fp_ogrenciler);
 	
 	
-	fp_ogrenciler = fopen("Öğrenciler.txt", "w");
+	fp_ogrenciler = fopen("Students.txt", "w");
 	if(fp_ogrenciler == NULL){
 		
-		perror("Öğrenciler.txt açılamadı : ");
+		perror("Students.txt açilamadi : ");
 		return;
 	}
 	
@@ -1243,7 +1243,7 @@ void Ogrenci_Guncelleme(){
 	free(yeni_ad);
 	free(yeni_soyad);
 
-	printf("\n------------------GÜNCELLENDİ----------------\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\n------------------GÜNCELLENDI----------------\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 }
 
@@ -1252,7 +1252,7 @@ void Ogrenci_Silme(){
 	/*
 	FILE *fp_ogrenciler, *fp_ogrenciler_kopya;
 
-	fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+	fp_ogrenciler = fopen("Students.txt", "r");
 	if(fp_ogrenciler == NULL){
 		
 		perror("Error opening file");
@@ -1263,7 +1263,7 @@ void Ogrenci_Silme(){
 	int silinen_satir;
 	Ogrenciler_Print();
 	
-	printf("Silmek istediğiniz dersin indexini giriniz: ");
+	printf("Silmek istediginiz dersin indexini giriniz: ");
 	scanf("%d", &silinen_satir);
 	getchar();
 	
@@ -1282,36 +1282,36 @@ void Ogrenci_Silme(){
 	fclose(fp_ogrenciler_kopya);
 	
 	int kontrol;
-	kontrol =  remove("Öğrenciler.txt");
+	kontrol =  remove("Students.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} 
 	
-	kontrol = rename("replica.txt", "Öğrenciler.txt");
+	kontrol = rename("replica.txt", "Students.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} 	*/
-	printf("\n------------------ÇALIŞMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\n------------------ÇALISMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 }
 
 void Ogrenciler_Print(){
 	
 	FILE *fp_ogrenciler;
-	fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+	fp_ogrenciler = fopen("Students.txt", "r");
 	
 	if(fp_ogrenciler == NULL){
 		
-		perror("Öğrenciler.txt açılamadı : ");
+		perror("Students.txt açilamadi : ");
 		return;
 	}
 		
 	char *line;
 	line = (char*) malloc(sizeof(char)*100);
 	int i = 1;
-	printf("\n İNDEX |  | NUMARA | İSİM | SOYİSİM | DERS SAYISI | TOPLAM KREDİ\n");
+	printf("\n INDEX |  | NUMARA | ISIM | SOYISIM | DERS SAYISI | TOPLAM KREDI\n");
 	while(fgets(line, 100, fp_ogrenciler)){
 		
 		printf("%d.",i);
@@ -1321,10 +1321,10 @@ void Ogrenciler_Print(){
 	
 	if(fclose(fp_ogrenciler) != 0){
         
-		perror("Öğrenciler.txt kapatılamadı : ");
+		perror("Students.txt kapatilamadi : ");
     }
 	free(line);
-	printf("\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : "); getch();
+	printf("\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : "); getch();
 }
 
 int Ogrenci_ID_Kontrol(char* id_test){
@@ -1332,11 +1332,11 @@ int Ogrenci_ID_Kontrol(char* id_test){
 	
 	FILE *fp_ogrenciler;
 	
-	fp_ogrenciler = fopen("Öğrenciler.txt", "r");
+	fp_ogrenciler = fopen("Students.txt", "r");
 	
 	if(fp_ogrenciler == NULL){
 		
-		perror("Öğrenciler.txt açılamadı : ");
+		perror("Students.txt açilamadi : ");
 		return;
 	}
 			
@@ -1374,7 +1374,7 @@ void Ogretmen_Guncelleme(){
 	}
 
 	FILE *fp_ogretmenler;
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "r");
+	fp_ogretmenler = fopen("Lecturer.txt", "r");
 	if(fp_ogretmenler == NULL){
 		
 		perror("Error opening file");
@@ -1388,7 +1388,7 @@ void Ogretmen_Guncelleme(){
 	yeni_unvan = (char*) malloc(sizeof(char)*100);
 	i = 1;
 	
-	printf("\n İNDEX  |ID|   İSİM   |   SOYİSİM   |   UNVAN \n");
+	printf("\n INDEX  |ID|   ISIM   |   SOYISIM   |   UNVAN \n");
 	while(fgets(line, 100, fp_ogretmenler)){
 		
 		printf("  %d.	 ",i);
@@ -1398,7 +1398,7 @@ void Ogretmen_Guncelleme(){
 	
 	rewind(fp_ogretmenler);
 	
-	printf("\n\nGüncellemek İstediğiniz Öğretim Üyesinin İNDEXİNİ Giriniz : ");
+	printf("\n\nGüncellemek Istediginiz Ögretim Üyesinin INDEXINI Giriniz : ");
 	scanf("%d", &guncellenen_satir);
 	getchar();
 	
@@ -1410,7 +1410,7 @@ void Ogretmen_Guncelleme(){
 		sscanf(line, "%[^,],%[^,],%[^,],%[^,]", ogretmen[i].id, ogretmen[i].ad, ogretmen[i].soyad, ogretmen[i].unvan);
 		
 		if((i+1) == guncellenen_satir){
-			printf("\nÖğretim Üyesinin YENİ Adını, Soyadını ve Unvanını Giriniz\nÖrnek Format :  isim1 isim2,soyisim,unvan,\n\t\t");
+			printf("\nÖgretim Üyesinin YENI Adini, Soyadini ve Unvanini Giriniz\nÖrnek Format :  isim1 isim2,soyisim,unvan,\n\t\t");
 			scanf("%[^,],%[^,],%[^,],", yeni_ad, yeni_soyad, yeni_unvan);
 			getchar();
 			strcpy(ogretmen[i].ad, yeni_ad);
@@ -1422,7 +1422,7 @@ void Ogretmen_Guncelleme(){
 	
 	fclose(fp_ogretmenler);
 	
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "w");
+	fp_ogretmenler = fopen("Lecturer.txt", "w");
 	if(fp_ogretmenler == NULL){
 		
 		perror("Error opening file");
@@ -1439,7 +1439,7 @@ void Ogretmen_Guncelleme(){
 	free(yeni_soyad);
 	free(yeni_unvan);
 	free(line);
-	printf("\n------------------GÜNCELLENDİ----------------\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\n------------------GÜNCELLENDI----------------\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();	
 }
 
@@ -1447,7 +1447,7 @@ void Ogretmen_Silme(){
 	
 /*	FILE *fp_ogretmenler, *fp_ogretmenler_kopya;
 
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "r");
+	fp_ogretmenler = fopen("Lecturer.txt", "r");
 	if(fp_ogretmenler == NULL){
 		
 		perror("Error opening file");
@@ -1458,7 +1458,7 @@ void Ogretmen_Silme(){
 	int silinen_satir;
 	Ogretmenler_Print();
 	
-	printf("Silmek istediğiniz dersin indexini giriniz: ");
+	printf("Silmek istediginiz dersin indexini giriniz: ");
 	scanf("%d", &silinen_satir);
 	getchar();
 	
@@ -1477,26 +1477,26 @@ void Ogretmen_Silme(){
 	fclose(fp_ogretmenler_kopya);
 	
 	int kontrol;
-	kontrol =  remove("Öğretim_üyeleri.txt");
+	kontrol =  remove("Lecturer.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} 
 	
-	kontrol = rename("replica.txt", "Öğretim_üyeleri.txt");
+	kontrol = rename("replica.txt", "Lecturer.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} 	
 	*/
-	printf("\n------------------ÇALIŞMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\n------------------ÇALISMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 }
 
 void Ogretmenler_Print(){
 	
 	FILE* fp_ogretmenler;
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "r");
+	fp_ogretmenler = fopen("Lecturer.txt", "r");
 	
 	if(fp_ogretmenler == NULL){
 		
@@ -1507,7 +1507,7 @@ void Ogretmenler_Print(){
 	char *line;
 	line = (char*) malloc(sizeof(char)*100);
 	int i = 1;
-	printf("\n İNDEX   | ID | İSİM | SOYİSİM | UNVAN \n");
+	printf("\n INDEX   | ID | ISIM | SOYISIM | UNVAN \n");
 	while(fgets(line, 100, fp_ogretmenler)){
 		
 		printf("%d. ",i);
@@ -1520,13 +1520,13 @@ void Ogretmenler_Print(){
 		perror("Unable to close the dersler");
     }
     free(line);
-    printf("\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : "); getch();
+    printf("\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : "); getch();
 }
 
 int Ogretmen_ID_Kontrol(char* id_test){
 	
 	FILE* fp_ogretmenler; 
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "r");
+	fp_ogretmenler = fopen("Lecturer.txt", "r");
 	if(fp_ogretmenler == NULL){
 		
 		perror("Error opening file");
@@ -1562,7 +1562,7 @@ void Ogretmen_Ekleme(){
 	
 	FILE *fp_ogretmenler;
 	
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "a");
+	fp_ogretmenler = fopen("Lecturer.txt", "a");
 	
 	if(fp_ogretmenler == NULL){
 		
@@ -1573,8 +1573,8 @@ void Ogretmen_Ekleme(){
 
 	int counter = 1, secim;
 
-	printf("\nGİRECEĞİNİZ ÖĞRETİM ÜYESİ BİLGİLERİNİN FORMATI AŞAĞIDAKİ GİBİ OLMALIDIR!!");
-	printf("\nFormat : öğretim_üyesi_id,öğretim_üyesi_isim,öğretim_üyesi_soyisim,öğretim_üyesi_unvan,\n");
+	printf("\nGIRECEGINIZ ÖGRETIM ÜYESI BILGILERININ FORMATI ASAGIDAKI GIBI OLMALIDIR!!");
+	printf("\nFormat : ögretim_üyesi_id,ögretim_üyesi_isim,ögretim_üyesi_soyisim,ögretim_üyesi_unvan,\n");
 	
 	
 	while(counter){
@@ -1584,7 +1584,7 @@ void Ogretmen_Ekleme(){
 		getchar();
 		if(Ogretmen_ID_Kontrol(ogretmen->id) == 0){
 			
-			printf("\n\nGirmiş Olduğunuz Öğretim Üyesi ID'si Bulunmaktadır.Tekrar Denemek İçin 1 Üst Menüye Dönmek İçin 0 Giriniz : "); 
+			printf("\n\nGirmis Oldugunuz Ögretim Üyesi ID'si Bulunmaktadir.Tekrar Denemek Için 1 Üst Menüye Dönmek Için 0 Giriniz : "); 
 			scanf("%d",&secim);
 			getchar();
 			if(secim==0){
@@ -1601,8 +1601,8 @@ void Ogretmen_Ekleme(){
 	fclose(fp_ogretmenler);
 	free(ogretmen);
 	
-	printf("\nGirmiş Olduğunuz Öğretim Üyesi Başarıyla Eklenmiştir!!");
-	printf("\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\nGirmis Oldugunuz Ögretim Üyesi Basariyla Eklenmistir!!");
+	printf("\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();	
 }
 
@@ -1611,7 +1611,7 @@ void Ogretmen_Ekleme(){
 void Dersler_Print(){
 	
 	FILE* fp_dersler;
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	
 	if(fp_dersler == NULL){
 		
@@ -1623,7 +1623,7 @@ void Dersler_Print(){
 	line = (char*) malloc(sizeof(char)*100);
 	
 	int i = 1;
-	printf("\nİNDEX | DERS KODU | DERS ADI | DERS KREDİSİ | DERS KONTENJANI | HOCA ID\n\n");
+	printf("\nINDEX | DERS KODU | DERS ADI | DERS KREDISI | DERS KONTENJANI | HOCA ID\n\n");
 	
 	while(fgets(line, 100, fp_dersler)){
 		
@@ -1639,7 +1639,7 @@ void Dersler_Print(){
 		perror("Unable to close the dersler");
     }
     free(line);
-   	printf("\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+   	printf("\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
     getch();
 }
 
@@ -1656,7 +1656,7 @@ void Ders_Guncelleme(){
 	
 	
 	FILE *fp_dersler;
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	if(fp_dersler == NULL){
 		
 		perror("Error opening file");
@@ -1670,7 +1670,7 @@ void Ders_Guncelleme(){
 	yeni_ogretmen_id = (char*) malloc(sizeof(char)*100);
 	
 	i = 1;
-	printf("\nİNDEX | DERS KODU | DERS ADI | DERS KREDİSİ | DERS KONTENJANI | HOCA ID\n\n");
+	printf("\nINDEX | DERS KODU | DERS ADI | DERS KREDISI | DERS KONTENJANI | HOCA ID\n\n");
 	
 	while(fgets(line, 100, fp_dersler)){
 		
@@ -1681,7 +1681,7 @@ void Ders_Guncelleme(){
 	
 	rewind(fp_dersler);
 	
-	printf("\n\nGüncellemek İstediğiniz Dersin İNDEXİNİ Giriniz : ");
+	printf("\n\nGüncellemek Istediginiz Dersin INDEXINI Giriniz : ");
 	scanf("%d", &guncellenen_satir);
 	getchar();
 	
@@ -1693,7 +1693,7 @@ void Ders_Guncelleme(){
 		sscanf(line, "%[^,],%[^,],%[^,],%[^,],%[^,]", ders[i].kod, ders[i].ad, ders[i].kredi, ders[i].kontenjan, ders[i].ogretmen_id);
 		
 		if((i+1) == guncellenen_satir){
-			printf("\nDersin YENİ Adını, Kontenjanını ve Dersi Veren Öğretim Görevlisinin IDsini Giriniz\nÖrnek Format :  ders adı,kontenjan,ogretmen ıd,\n\t\t");
+			printf("\nDersin YENI Adini, Kontenjanini ve Dersi Veren Ögretim Görevlisinin IDsini Giriniz\nÖrnek Format :  ders adi,kontenjan,ogretmen id,\n\t\t");
 			scanf("%[^,],%[^,],%[^,],", yeni_ders_adi, yeni_kontenjan, yeni_ogretmen_id);
 			getchar();
 			if(Ogretmen_ID_Kontrol(yeni_ogretmen_id) == 0){
@@ -1702,7 +1702,7 @@ void Ders_Guncelleme(){
 				strcpy(ders[i].ogretmen_id, yeni_ogretmen_id);
 			}
 			else{
-				printf("Girmiş Olduğunun Öğretim Üyesi ID'si Bulunamamıştır!!\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basınız : ");
+				printf("Girmis Oldugunun Ögretim Üyesi ID'si Bulunamamistir!!\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basiniz : ");
 				fclose(fp_dersler);
 				free(ders);
 				free(line);
@@ -1717,7 +1717,7 @@ void Ders_Guncelleme(){
 	}
 	fclose(fp_dersler);
 	
-	fp_dersler = fopen("Dersler.txt", "w");
+	fp_dersler = fopen("Courses.txt", "w");
 	if(fp_dersler == NULL){
 		
 		perror("Error opening file");
@@ -1735,8 +1735,8 @@ void Ders_Guncelleme(){
 	free(yeni_kontenjan);
 	free(yeni_ogretmen_id);
 	
-	printf("\nGirmiş Olduğunuz Ders Güncellenmiştir!!");
-	printf("\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\nGirmis Oldugunuz Ders Güncellenmistir!!");
+	printf("\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 	
 }
@@ -1745,7 +1745,7 @@ void Ders_Silme(){
 	
 /*	FILE *fp_dersler, *fp_dersler_kopya;
 
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	if(fp_dersler == NULL){
 		
 		perror("Error opening file");
@@ -1755,7 +1755,7 @@ void Ders_Silme(){
 	
 	int silinen_satir;
 	Dersler_Print();
-	printf("Silmek istediğiniz dersin indexini giriniz: ");
+	printf("Silmek istediginiz dersin indexini giriniz: ");
 	scanf("%d", &silinen_satir);
 	getchar();
 	
@@ -1774,25 +1774,25 @@ void Ders_Silme(){
 	fclose(fp_dersler_kopya);
 	
 	int kontrol;
-	kontrol =  remove("Dersler.txt");
+	kontrol =  remove("Courses.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} 
 	
-	kontrol = rename("replica.txt", "Dersler.txt");
+	kontrol = rename("replica.txt", "Courses.txt");
 	
 	if(kontrol != 0) {
     	perror("\nError: unable to delete the file");
 	} */
-	printf("\n------------------ÇALIŞMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\n------------------ÇALISMA DEVAM ETMEKTE----------------\n\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();	
 }
 
 int Ders_Hoca_id_kontrol(char* id_test){
 	
 	FILE* fp_ogretmenler; 
-	fp_ogretmenler = fopen("Öğretim_üyeleri.txt", "r");
+	fp_ogretmenler = fopen("Lecturer.txt", "r");
 	if(fp_ogretmenler == NULL){
 		
 		printf("Error opening file");
@@ -1819,7 +1819,7 @@ int Ders_Hoca_id_kontrol(char* id_test){
 int Ders_Kodu_Kontrol(char* kod_test){
 	
 	FILE* fp_dersler;
-	fp_dersler = fopen("Dersler.txt", "r");
+	fp_dersler = fopen("Courses.txt", "r");
 	if(fp_dersler == NULL){
 		
 		printf("Error opening file");
@@ -1853,7 +1853,7 @@ void Ders_Ekleme(){
 	}
 	
 	FILE* fp_dersler; 
-	fp_dersler = fopen("Dersler.txt", "a");
+	fp_dersler = fopen("Courses.txt", "a");
 	
 	if(fp_dersler == NULL){
 		
@@ -1862,15 +1862,15 @@ void Ders_Ekleme(){
 	}
 	int counter = 1, secim;
 	
-	printf("\nGİRECEĞİNİZ DERS BİLGİLERİNİN FORMATI AŞAĞIDAKİ GİBİ OLMALIDIR!!");
-	printf("\nFormat : ders_kodu,ders_adı,ders_kredisi,ders_kontenjanı,dersi_veren_öğretim_üyesi_IDsi,\n");
+	printf("\nGIRECEGINIZ DERS BILGILERININ FORMATI ASAGIDAKI GIBI OLMALIDIR!!");
+	printf("\nFormat : ders_kodu,ders_adi,ders_kredisi,ders_kontenjani,dersi_veren_ögretim_üyesi_IDsi,\n");
 	while (counter){
 		printf("\nÖrnek  : blm1234,örnek ders,1,10,100,\n");	
 		scanf("%[^,],%[^,],%[^,],%[^,],%[^,]", ders->kod, ders->ad, ders->kredi, ders->kontenjan, ders->ogretmen_id);		 
 		getchar();     	
 		if(Ders_Kodu_Kontrol(ders->kod) == 1){
 			
-			printf("Girmiş olduğunuz ders kodu bulunmaktadır.Tekrar Denemek İçin 1 Üst Menüye Dönmek İçin 0 Giriniz : "); 
+			printf("Girmis oldugunuz ders kodu bulunmaktadir.Tekrar Denemek Için 1 Üst Menüye Dönmek Için 0 Giriniz : "); 
 			scanf("%d",&secim);
 			getchar();
 			if(secim==0){
@@ -1880,7 +1880,7 @@ void Ders_Ekleme(){
 		}
 		else if(Ders_Hoca_id_kontrol(ders->ogretmen_id) == 1){
 				
-			printf("\nGirmiş olduğunuz Öğretim Üysei ID'si Bulunamadı.Tekrar Denemek İçin 1 Üst Menüye Dönmek İçin 0 Giriniz : "); scanf("%d",&secim);
+			printf("\nGirmis oldugunuz Ögretim Üysei ID'si Bulunamadi.Tekrar Denemek Için 1 Üst Menüye Dönmek Için 0 Giriniz : "); scanf("%d",&secim);
 			if(secim==0){
 				fclose(fp_dersler);
 				return;
@@ -1894,10 +1894,9 @@ void Ders_Ekleme(){
 	fprintf(fp_dersler,"%s,%s,%s,%s,%s,\n",ders->kod, ders->ad, ders->kredi, ders->kontenjan, ders->ogretmen_id);
 	fclose(fp_dersler);
 	free(ders);
-	printf("\nGirmiş Olduğunuz Ders Başarıyla Eklenmiştir!!");
-	printf("\nÜst Menüye Dönmek İçin Herhangi Bir Tuşa Basın : ");
+	printf("\nGirmis Oldugunuz Ders Basariyla Eklenmistir!!");
+	printf("\nÜst Menüye Dönmek Için Herhangi Bir Tusa Basin : ");
 	getch();
 	
 }
-
 
