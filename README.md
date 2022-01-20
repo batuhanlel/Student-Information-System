@@ -1,9 +1,9 @@
 # Student-Information-System
 **Subject :** Creating a small scale and file based Student Information System based on the logic of relational databases in C
 
-*Note1 : Before programme starts, there is already a set of data you can work with. But if you want to add data from scratch, you can just go with empty text files and start adding data with respect to dependencies.*
+*Note1 : Before program starts, there is already a set of data you can work with. But if you want to add data from scratch, you can just go with empty text files and start adding data with respect to dependencies.*
 
-*Note2 : After programme stars you are expected to enter the maximum number of course and credit can be taken by a student*
+*Note2 : After program stars you are expected to enter the maximum number of course and credit can be taken by a student*
 
 ## Scope of Application
 - Courses Text
@@ -44,3 +44,7 @@
   2. You can list all students enrolled in a course whose course code is given.
   3. You can list all courses taken by a students whose student ID is given.
   4. You can create a class list for a given course code and it's lecturer ID and save that list in 'CourseCode'_ClassList.txt file.
+
+  ## Uncompleted Parts
+  - First of all, it is obvious that the code is not the best. Implementation should have been done using OOP approach(Dividing code into sub files).
+  - Secondly, deleting function for Students, Courses and Lecturer files are not completed because of the complex dependencies. For all three 'delete' function, there is a coded part that I can get to the certain point. If you wish to complete any of the functions, you can make a pull request.
