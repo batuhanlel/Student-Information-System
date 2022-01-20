@@ -130,11 +130,11 @@ void Ana_menu(int kredi_limit, int ders_limit){
 	j=1;
 	while(j){
 		printf("\n\t\t\t\tMAIN MENU");
-		printf("\n1)COURSE OPERATIONS\n -->Ders Ekleme\n -->Ders Silme\n -->Ders Güncelleme\n -->Dersleri Görüntüleme");
-		printf("\n2)ÖGRENCI ISLEMLERI\n -->Ders Kayit\n -->Ders Birakma\n -->Ögrenci Ekleme\n -->Ögrenci Silme\n -->Ögrenci Güncelleme\n -->Tüm Ögrencileri Görüntüleme");
-		printf("\n3)ÖGRETIM ÜYESI ISLEMLERI\n -->Ögretim Üyesi Ekleme\n -->Ögretim Üyesi Silme\n -->Ögretim Üyesi Güncelleme\n -->Tüm Ögretim Üyelerini Görüntüleme");
-		printf("\n4)LISTELEME ISLEMLERI\n -->Ögretim Üyesi Verdigi Dersleri Listeleme\n -->Derse Kayitli Ögrencileri Listeleme\n -->Ögrencinin Aldigi Dersleri Listeleme\n -->Ögretim Üyesinin Verdigi Derslerin Sinif Listelerini Olusturma");
-		printf("\nDEVAM ETMEK ISTEDIGINIZ ÜST BASLIGIN NUMARASINI GIRINIZ\nPROGRAMI SONLANDIRMAK IÇIN 0 GIRINIZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n1)COURSE OPERATIONS\n -->Adding Course\n -->Deleting Course\n -->Updating Course\n -->Listing Courses");
+		printf("\n2)STUDENT OPERATIONS\n -->Course Enrollment\n -->Course Dropping\n -->Adding Student\n -->Deleting Student\n -->Updating Student\n -->Listing All Students");
+		printf("\n3)LECTURER OPERATIONS\n -->Adding Lecturer\n -->Deleting Lecturer\n -->Updating Lecturer\n -->Listing All Lecturers");
+		printf("\n4)LISTING OPERATIONS\n -->Listing the Courses Given by the Lecturer\n -->Listing Students Enrolled in a Course\n -->Listing the Courses Taken by a Student\n -->Creating Class Lists of Courses Taught by the Lecturer");
+		printf("\nENTER THE NUMBER OF THE TOP HEADING YOU WISH TO CONTINUE\nENTER 0 TO TERMINATE THE PROGRAM\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ders_menu();
@@ -161,9 +161,9 @@ void Ders_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tDERS ISLEMLERI");
-		printf("\n1)Ders Ekleme\n2)Ders Güncelleme\n3)Dersleri Görüntüleme\n4)Ders Silme");
-		printf("\n\nDEVAM ETMEK IÇIN ISTEDIGINIZ ISLEMIN NUMARASINI GIRINIZ\nÜST MENÜYE DÖNMEK IÇIN 0 GIRINIZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tCOURSE OPERATIONS");
+		printf("\n1)Adding Course\n2)Updating Course\n3)Listing Courses\n4)Deleting Course");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ders_Ekleme();	
@@ -191,9 +191,9 @@ void Ogrenci_menu(int kredi, int ders){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tÖGRENCI ISLEMLERI");
-		printf("\n1)Ders Kayit\n2)Ders Birakma\n3)Ögrenci Ekleme\n4)Ögrenci Silme\n5)Ögrenci Güncelleme\n6)Tüm Ögrencileri Görüntüleme");
-		printf("\n\nDEVAM ETMEK IÇIN ISTEDIGINIZ ISLEMIN NUMARASINI GIRINIZ\nÜST MENÜYE DÖNMEK IÇIN 0 GIRINIZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tSTUDENT OPERATIONS");
+		printf("\n1)Course Enrollment\n2)Course Dropping\n3)Adding Student\n4)Deleting Student\n5)Updating Student\n6)Listing All Students");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Derse_Kayit(kredi,ders);	
@@ -229,9 +229,9 @@ void Ogretmen_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tÖGRETIM ÜYESI ISLEMLERI");
-		printf("\n1)Ögretim Üyesi Ekleme\n2)Ögretim Üyesi Silme\n3)Ögretim Üyesi Güncelleme\n4)Tüm Ögretim Üyelerini Görüntüleme");
-		printf("\n\nDEVAM ETMEK IÇIN ISTEDIGINIZ ISLEMIN NUMARASINI GIRINIZ\nÜST MENÜYE DÖNMEK IÇIN 0 GIRINIZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tLECTURER OPERATIONS");
+		printf("\n1)Adding Lecturer\n2)Deleting Lecturer\n3)Updating Lecturer\n4)Listing All Lecturers");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ogretmen_Ekleme();	
@@ -260,9 +260,9 @@ void Listeleme_menu(){
 	int i, j=1;
 	while(j){
 		system("cls");
-		printf("\n\t\tLISTELEME ISLEMLERI");
-		printf("\n1)Ögretim Üyesi Verdigi Dersleri Listeleme\n2)Derse Kayitli Ögrencileri Listeleme\n3)Ögrencinin Aldigi TÜM Dersleri Listeleme\n4)Ögretim Üyesinin Verdigi Derslerin Sinif Listelerini Olusturma");
-		printf("\n\nDEVAM ETMEK IÇIN ISTEDIGINIZ ISLEMIN NUMARASINI GIRINIZ\nÜST MENÜYE DÖNMEK IÇIN 0 GIRINIZ\nTercihiniz : "); scanf("%d",&i); getchar();
+		printf("\n\t\tLISTING OPERATIONS");
+		printf("\n1)Listing the Courses Given by the Lecturer\n2)Listing Students Enrolled in a Course\n3)Listing the Courses Taken by a Student\n4)Creating Class Lists of Courses Taught by the Lecturer");
+		printf("\n\nENTER THE OPERATION NUMBER YOU WANT TO CONTINUE\nENTER 0 TO RETURN TO TOP MENU\nYour Choice : "); scanf("%d",&i); getchar();
 		if(i==1){
 			system("cls");
 			Ogretmenin_Verdigi_Dersler_Print();	
